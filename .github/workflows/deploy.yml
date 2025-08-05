@@ -16,8 +16,8 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v4
         with:
-          persist-credentials: false  # important for peaceiris deploy to work
-          fetch-depth: 0              # get full git history to prevent exit 128
+          persist-credentials: false
+          fetch-depth: 0
 
       - name: Setup Node.js
         uses: actions/setup-node@v4
@@ -26,6 +26,10 @@ jobs:
 
       - name: Install dependencies
         run: npm install
+
+      - name: Inject VITE_FORM_SUBMIT_KEY from GitHub Secrets
+        run: |
+          echo "VITE_FORM_SUBMIT_KEY=${{ secrets.VITE_FORM_SUBMIT_KEY }}" > .env
 
       - name: Build Vite project
         run: npm run build
