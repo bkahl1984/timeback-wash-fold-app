@@ -325,47 +325,91 @@ const TimeBackLaundryApp: React.FC = () => {
                           Preferred Service Date *
                         </label>
                         <div className="relative">
-                          <input
-                            type="date"
-                            name="serviceDate"
-                            value={contactForm.serviceDate}
-                            onChange={handleContactFormChange}
-                            min={getTomorrowDate()}
-                            required
-                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
-                            style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
-                          />
-                          {/* Custom calendar icon */ }
-                          {isMobile && (
-                            < div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                              <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                              </svg>
-                            </div>
+                          {/* Custom calendar icon */}
+                          {!isMobile && (
+                            <input
+                              type="date"
+                              name="serviceDate"
+                              value={contactForm.serviceDate}
+                              onChange={handleContactFormChange}
+                              min={getTomorrowDate()}
+                              required
+                              className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                              style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
+                            />
                           )}
+                          {isMobile && (
+                            <>
+                              <input
+                                type="date"
+                                name="serviceDate"
+                                value={contactForm.serviceDate}
+                                onChange={handleContactFormChange}
+                                min={getTomorrowDate()}
+                                required
+                                className="w-full px-4 py-3 lg:py-4 md:py-4 sm:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                                style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
+                              />
+                              < div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                                <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                              </div>
+                            </>
+                          )}
+                        </div>
+                      </div>
+
+                      {/* Pickup Time Field */}
+                      <div>
+                        <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                          <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                          Preferred Pickup Time *
+                        </label>
+                        <div className="relative">
+                          <select
+                            name="pickupTime"
+                            value={contactForm.pickupTime}
+                            onChange={handleContactFormChange}
+                            required
+                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
+                            style={{ color: contactForm.pickupTime === '' ? '#94a3b8' : '#0f172a' }}
+                          >
+                            <option value="" style={{ color: '#94a3b8' }}>Select time window</option>
+                            <option value="9am-12pm" style={{ color: '#0f172a' }}>9 AM - 12 PM</option>
+                            <option value="12pm-3pm" style={{ color: '#0f172a' }}>12 PM - 3 PM</option>
+                            <option value="3pm-6pm" style={{ color: '#0f172a' }}>3 PM - 6 PM</option>
+                            <option value="6pm-8pm" style={{ color: '#0f172a' }}>6 PM - 8 PM</option>
+                          </select>
+                          {/* Custom dropdown arrow */}
+                          <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                            <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
-                    {/* Pickup Time Field */}
+                    {/* Wash Type Dropdown */}
                     <div>
                       <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
-                        Preferred Pickup Time *
+                        <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        Wash Type *
                       </label>
                       <div className="relative">
                         <select
-                          name="pickupTime"
-                          value={contactForm.pickupTime}
+                          name="washType"
+                          value={contactForm.washType}
                           onChange={handleContactFormChange}
                           required
-                          className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
-                          style={{ color: contactForm.pickupTime === '' ? '#94a3b8' : '#0f172a' }}
+                          className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12"
+                          style={{ color: contactForm.washType === '' ? '#94a3b8' : '#0f172a' }}
                         >
-                          <option value="" style={{ color: '#94a3b8' }}>Select time window</option>
-                          <option value="9am-12pm" style={{ color: '#0f172a' }}>9 AM - 12 PM</option>
-                          <option value="12pm-3pm" style={{ color: '#0f172a' }}>12 PM - 3 PM</option>
-                          <option value="3pm-6pm" style={{ color: '#0f172a' }}>3 PM - 6 PM</option>
-                          <option value="6pm-8pm" style={{ color: '#0f172a' }}>6 PM - 8 PM</option>
+                          <option value="" style={{ color: '#94a3b8' }}>Select wash type</option>
+                          <option value="scented" style={{ color: '#0f172a' }}>Scented</option>
+                          <option value="unscented" style={{ color: '#0f172a' }}>Unscented</option>
+                          <option value="hypoallergenic" style={{ color: '#0f172a' }}>Hypoallergenic</option>
                         </select>
                         {/* Custom dropdown arrow */}
                         <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
@@ -375,105 +419,75 @@ const TimeBackLaundryApp: React.FC = () => {
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* Wash Type Dropdown */}
-                  <div>
-                    <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                      <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
-                      Wash Type *
-                    </label>
-                    <div className="relative">
-                      <select
-                        name="washType"
-                        value={contactForm.washType}
+                    {/* Notes Field */}
+                    <div>
+                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                        Additional Notes (Optional)
+                      </label>
+                      <textarea
+                        name="notes"
+                        value={contactForm.notes}
                         onChange={handleContactFormChange}
-                        required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12"
-                        style={{ color: contactForm.washType === '' ? '#94a3b8' : '#0f172a' }}
-                      >
-                        <option value="" style={{ color: '#94a3b8' }}>Select wash type</option>
-                        <option value="scented" style={{ color: '#0f172a' }}>Scented</option>
-                        <option value="unscented" style={{ color: '#0f172a' }}>Unscented</option>
-                        <option value="hypoallergenic" style={{ color: '#0f172a' }}>Hypoallergenic</option>
-                      </select>
-                      {/* Custom dropdown arrow */}
-                      <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                        <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                          <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
-                        </svg>
-                      </div>
+                        rows={4}
+                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        placeholder="Any special instructions, stain alerts, or pickup preferences..."
+                      />
+                    </div>
+
+                    {/* Submit Button */}
+                    <button
+                      type="submit"
+                      disabled={isSubmitting}
+                      className="w-full bg-slate-700 text-white py-4 lg:py-5 rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
+                    >
+                      {isSubmitting ? (
+                        <>
+                          <div className="animate-spin rounded-full h-5 w-5 lg:h-6 lg:w-6 border-b-2 border-white mr-3"></div>
+                          Submitting...
+                        </>
+                      ) : (
+                        <>
+                          <Send className="w-5 h-5 lg:w-6 lg:h-6 mr-3" />
+                          Submit Service Request
+                        </>
+                      )}
+                    </button>
+
+                    <p className="text-xs md:text-sm lg:text-base text-slate-500 text-center md:text-left mt-4">
+                      We'll contact you within 24 hours to confirm your service appointment.
+                    </p>
+                  </form>
+                </>
+              ) : (
+                /* Thank You Message */
+                <div className="text-center py-12">
+                  <div className="mb-6">
+                    <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
+                      <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                        <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
+                      </svg>
                     </div>
                   </div>
-
-                  {/* Notes Field */}
-                  <div>
-                    <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                      Additional Notes (Optional)
-                    </label>
-                    <textarea
-                      name="notes"
-                      value={contactForm.notes}
-                      onChange={handleContactFormChange}
-                      rows={4}
-                      className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                      placeholder="Any special instructions, stain alerts, or pickup preferences..."
-                    />
-                  </div>
-
-                  {/* Submit Button */}
-                  <button
-                    type="submit"
-                    disabled={isSubmitting}
-                    className="w-full bg-slate-700 text-white py-4 lg:py-5 rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
-                  >
-                    {isSubmitting ? (
-                      <>
-                        <div className="animate-spin rounded-full h-5 w-5 lg:h-6 lg:w-6 border-b-2 border-white mr-3"></div>
-                        Submitting...
-                      </>
-                    ) : (
-                      <>
-                        <Send className="w-5 h-5 lg:w-6 lg:h-6 mr-3" />
-                        Submit Service Request
-                      </>
-                    )}
-                  </button>
-
-                  <p className="text-xs md:text-sm lg:text-base text-slate-500 text-center md:text-left mt-4">
-                    We'll contact you within 24 hours to confirm your service appointment.
+                  <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">Thank You!</h3>
+                  <p className="text-lg md:text-xl text-slate-600 mb-6">
+                    Your service request has been submitted successfully.
                   </p>
-                </form>
-            </>
-            ) : (
-            /* Thank You Message */
-            <div className="text-center py-12">
-              <div className="mb-6">
-                <div className="mx-auto w-16 h-16 bg-green-100 rounded-full flex items-center justify-center">
-                  <svg className="w-8 h-8 text-green-600" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M5 13l4 4L19 7" />
-                  </svg>
+                  <p className="text-base md:text-lg text-slate-500 mb-8">
+                    Someone from our team will be contacting you shortly to confirm your appointment and provide additional details.
+                  </p>
+                  <button
+                    onClick={() => setIsSubmitted(false)}
+                    className="bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors"
+                  >
+                    Submit Another Request
+                  </button>
                 </div>
-              </div>
-              <h3 className="text-2xl md:text-3xl font-bold text-slate-800 mb-4">Thank You!</h3>
-              <p className="text-lg md:text-xl text-slate-600 mb-6">
-                Your service request has been submitted successfully.
-              </p>
-              <p className="text-base md:text-lg text-slate-500 mb-8">
-                Someone from our team will be contacting you shortly to confirm your appointment and provide additional details.
-              </p>
-              <button
-                onClick={() => setIsSubmitted(false)}
-                className="bg-slate-700 text-white px-6 py-3 rounded-lg font-semibold hover:bg-slate-800 transition-colors"
-              >
-                Submit Another Request
-              </button>
-            </div>
               )}
+            </div>
           </div>
         </div>
       </div>
-    </div>
     </div >
   );
 };
