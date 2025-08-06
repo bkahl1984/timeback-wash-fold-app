@@ -331,9 +331,15 @@ const TimeBackLaundryApp: React.FC = () => {
                             min={getTomorrowDate()}
                             required
                             placeholder="Select service date"
-                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                            style={{ color: contactForm.serviceDate === '' ? '#94a3b8' : '#0f172a' }}
+                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg pr-12"
+                            style={{color: contactForm.serviceDate === '' ? '#94a3b8' : '#0f172a'}}
                           />
+                          {/* Custom calendar icon */}
+                          <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                            <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                            </svg>
+                          </div>
                         </div>
                       </div>
 
