@@ -267,7 +267,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
                     {/* Phone Field */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         <Phone className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Phone Number *
                       </label>
@@ -284,7 +284,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
                     {/* Address Field */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         <Home className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Service Address *
                       </label>
@@ -301,7 +301,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
                     {/* Email Field */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         <Mail className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Email Address *
                       </label>
@@ -320,7 +320,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     <div className="space-y-4">
                       {/* Service Date Field */}
                       <div>
-                        <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                        <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                           <Calendar className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                           Preferred Service Date *
                         </label>
@@ -334,35 +334,26 @@ const TimeBackLaundryApp: React.FC = () => {
                               onChange={handleContactFormChange}
                               min={getTomorrowDate()}
                               required
-                              className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                              className={!isMobile 
+                                ? "w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400" 
+                                : "w-full px-4 py-3 h-12 text-left lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                              }
                               style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
                             />
                           )}
                           {isMobile && (
-                            <>
-                              <input
-                                type="date"
-                                name="serviceDate"
-                                value={contactForm.serviceDate}
-                                onChange={handleContactFormChange}
-                                min={getTomorrowDate()}
-                                required
-                                className="w-full px-4 py-3 h-12 text-left lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
-                                style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
-                              />
-                              < div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
-                                <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                                </svg>
-                              </div>
-                            </>
+                            < div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                              <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                              </svg>
+                            </div>
                           )}
                         </div>
                       </div>
 
                       {/* Pickup Time Field */}
                       <div>
-                        <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                        <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                           <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                           Preferred Pickup Time *
                         </label>
@@ -393,7 +384,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
                     {/* Wash Type Dropdown */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Wash Type *
                       </label>
@@ -422,7 +413,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
                     {/* Notes Field */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         Additional Notes (Optional)
                       </label>
                       <textarea
