@@ -276,7 +276,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         onChange={handleContactFormChange}
                         required
                         className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                        placeholder="(540) 580-4969"
+                        placeholder="(555) 555-5555"
                       />
                     </div>
 
