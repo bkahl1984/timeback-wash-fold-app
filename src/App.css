@@ -40,3 +40,13 @@
 .read-the-docs {
   color: #888;
 }
+
+/* Force left alignment for input[type="date"] text */
+input[type="date"] {
+  text-align: left;
+  text-align-last: left;
+}
+
+input[type="date"]::-webkit-datetime-edit {
+  text-align: left;
+}
