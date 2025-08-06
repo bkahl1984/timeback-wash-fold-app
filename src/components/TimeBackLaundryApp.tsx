@@ -28,7 +28,7 @@ const TimeBackLaundryApp: React.FC = () => {
     email: '',
     serviceDate: '',
     pickupTime: '',
-    washType: 'scented',
+    washType: '',
     notes: ''
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
@@ -136,7 +136,7 @@ const TimeBackLaundryApp: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-blue-50 to-slate-100 p-4 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br from-slate-700 to-slate-900 pt-8 pb-8 lg:p-8">
       <div className="max-w-sm mx-auto md:max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Three Column Layout for Desktop, Two for Tablet */}
         <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-0">
@@ -314,25 +314,8 @@ const TimeBackLaundryApp: React.FC = () => {
                       />
                     </div>
 
-                    {/* Service Date Field */}
-                    {/* <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Calendar className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
-                        Preferred Service Date *
-                      </label>
-                      <input
-                        type="date"
-                        name="serviceDate"
-                        value={contactForm.serviceDate}
-                        onChange={handleContactFormChange}
-                        min={getTomorrowDate()}
-                        required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                      />
-                    </div> */}
-
                     {/* Service Date and Pickup Time Row */}
-                    <div className="lg:grid lg:grid-cols-2 lg:gap-4 space-y-4 lg:space-y-0">
+                    <div className="space-y-4">
                       {/* Service Date Field */}
                       <div>
                         <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
@@ -347,6 +330,7 @@ const TimeBackLaundryApp: React.FC = () => {
                           min={getTomorrowDate()}
                           required
                           className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                          style={{ color: contactForm.serviceDate === '' ? '#94a3b8' : '#0f172a' }}
                         />
                       </div>
 
@@ -356,19 +340,28 @@ const TimeBackLaundryApp: React.FC = () => {
                           <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                           Preferred Pickup Time *
                         </label>
-                        <select
-                          name="pickupTime"
-                          value={contactForm.pickupTime}
-                          onChange={handleContactFormChange}
-                          required
-                          className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                        >
-                          <option value="">Select time window</option>
-                          <option value="9am-12pm">9 AM - 12 PM</option>
-                          <option value="12pm-3pm">12 PM - 3 PM</option>
-                          <option value="3pm-6pm">3 PM - 6 PM</option>
-                          <option value="6pm-8pm">6 PM - 8 PM</option>
-                        </select>
+                        <div className="relative">
+                          <select
+                            name="pickupTime"
+                            value={contactForm.pickupTime}
+                            onChange={handleContactFormChange}
+                            required
+                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
+                            style={{ color: contactForm.pickupTime === '' ? '#94a3b8' : '#0f172a' }}
+                          >
+                            <option value="" style={{ color: '#94a3b8' }}>Select time window</option>
+                            <option value="9am-12pm" style={{ color: '#0f172a' }}>9 AM - 12 PM</option>
+                            <option value="12pm-3pm" style={{ color: '#0f172a' }}>12 PM - 3 PM</option>
+                            <option value="3pm-6pm" style={{ color: '#0f172a' }}>3 PM - 6 PM</option>
+                            <option value="6pm-8pm" style={{ color: '#0f172a' }}>6 PM - 8 PM</option>
+                          </select>
+                          {/* Custom dropdown arrow */}
+                          <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                            <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                              <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                            </svg>
+                          </div>
+                        </div>
                       </div>
                     </div>
 
@@ -378,17 +371,27 @@ const TimeBackLaundryApp: React.FC = () => {
                         <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Wash Type *
                       </label>
-                      <select
-                        name="washType"
-                        value={contactForm.washType}
-                        onChange={handleContactFormChange}
-                        required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
-                      >
-                        <option value="scented">Scented</option>
-                        <option value="unscented">Unscented</option>
-                        <option value="hypoallergenic">Hypoallergenic</option>
-                      </select>
+                      <div className="relative">
+                        <select
+                          name="washType"
+                          value={contactForm.washType}
+                          onChange={handleContactFormChange}
+                          required
+                          className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12"
+                          style={{ color: contactForm.washType === '' ? '#94a3b8' : '#0f172a' }}
+                        >
+                          <option value="" style={{ color: '#94a3b8' }}>Select wash type</option>
+                          <option value="scented" style={{ color: '#0f172a' }}>Scented</option>
+                          <option value="unscented" style={{ color: '#0f172a' }}>Unscented</option>
+                          <option value="hypoallergenic" style={{ color: '#0f172a' }}>Hypoallergenic</option>
+                        </select>
+                        {/* Custom dropdown arrow */}
+                        <div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
+                          <svg className="w-5 h-5 text-slate-500" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                            <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M19 9l-7 7-7-7" />
+                          </svg>
+                        </div>
+                      </div>
                     </div>
 
                     {/* Notes Field */}
