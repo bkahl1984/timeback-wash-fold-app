@@ -331,7 +331,7 @@ const TimeBackLaundryApp: React.FC = () => {
                             min={getTomorrowDate()}
                             required
                             placeholder="Select service date"
-                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg pr-12"
+                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
                             style={{color: contactForm.serviceDate === '' ? '#94a3b8' : '#0f172a'}}
                           />
                           {/* Custom calendar icon */}
