@@ -250,7 +250,7 @@ const TimeBackLaundryApp: React.FC = () => {
                   <form onSubmit={handleContactFormSubmit} className="space-y-4 lg:space-y-6">
                     {/* Name Field */}
                     <div>
-                      <label className="block text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
                         <User className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
                         Full Name *
                       </label>
