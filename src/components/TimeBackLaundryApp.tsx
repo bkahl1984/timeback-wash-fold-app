@@ -1,5 +1,6 @@
 import React, { useState } from 'react';
 import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock } from 'lucide-react';
+import emailjs from '@emailjs/browser';
 
 interface Service {
   icon: React.ReactNode;
@@ -63,42 +64,87 @@ const TimeBackLaundryApp: React.FC = () => {
     }));
   };
 
-  const formKey = import.meta.env.VITE_FORM_SUBMIT_KEY;
+  //const formKey = import.meta.env.VITE_FORM_SUBMIT_KEY;
 
   const isMobile = /Mobi|Android/i.test(navigator.userAgent);
+
+  // const handleContactFormSubmit = async (e: React.FormEvent) => {
+  //   e.preventDefault();
+  //   setIsSubmitting(true);
+
+  //   try {
+  //     const payload = {
+  //       name: contactForm.name,
+  //       phone: contactForm.phone,
+  //       email: contactForm.email,
+  //       address: contactForm.address,
+  //       serviceDate: contactForm.serviceDate,
+  //       pickupTime: contactForm.pickupTime,
+  //       washType: contactForm.washType,
+  //       notes: contactForm.notes || 'None provided',
+  //       _subject: `TimeBack Wash & Fold Request from ${contactForm.name || 'Customer'}`,
+  //     };
+
+  //     const response = await fetch(`https://formsubmit.co/ajax/${formKey}`, {
+  //       method: 'POST',
+  //       headers: {
+  //         'Content-Type': 'application/json',
+  //         Accept: 'application/json',
+  //       },
+  //       body: JSON.stringify(payload),
+  //     });
+
+  //     if (!response.ok) {
+  //       throw new Error('Form submission failed');
+  //     }
+
+  //     alert(`Booking request submitted for ${contactForm.name}! We'll contact you within 1 hour to confirm your pickup.`);
+  //     setIsSubmitted(true);
+
+  //     setContactForm({
+  //       name: '',
+  //       phone: '',
+  //       email: '',
+  //       address: '',
+  //       serviceDate: '',
+  //       pickupTime: '',
+  //       washType: '',
+  //       notes: ''
+  //     });
+
+  //   } catch (error) {
+  //     console.error('Error submitting form:', error);
+  //     alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4969.');
+  //   } finally {
+  //     setIsSubmitting(false);
+  //   }
+  // };
 
   const handleContactFormSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
     setIsSubmitting(true);
 
+    const templateParams = {
+      name: contactForm.name,
+      phone: contactForm.phone,
+      email: contactForm.email,
+      address: contactForm.address,
+      serviceDate: contactForm.serviceDate,
+      pickupTime: contactForm.pickupTime,
+      washType: contactForm.washType,
+      notes: contactForm.notes || 'None provided',
+    };
+
     try {
-      const payload = {
-        name: contactForm.name,
-        phone: contactForm.phone,
-        email: contactForm.email,
-        address: contactForm.address,
-        serviceDate: contactForm.serviceDate,
-        pickupTime: contactForm.pickupTime,
-        washType: contactForm.washType,
-        notes: contactForm.notes || 'None provided',
-        _subject: `TimeBack Wash & Fold Request from ${contactForm.name || 'Customer'}`,
-      };
+      const result = await emailjs.send(
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+      );
 
-      const response = await fetch(`https://formsubmit.co/ajax/${formKey}`, {
-        method: 'POST',
-        headers: {
-          'Content-Type': 'application/json',
-          Accept: 'application/json',
-        },
-        body: JSON.stringify(payload),
-      });
-
-      if (!response.ok) {
-        throw new Error('Form submission failed');
-      }
-
+      console.log('Email successfully sent!', result.text);
       alert(`Booking request submitted for ${contactForm.name}! We'll contact you within 1 hour to confirm your pickup.`);
-      setIsSubmitted(true);
 
       setContactForm({
         name: '',
@@ -110,10 +156,9 @@ const TimeBackLaundryApp: React.FC = () => {
         washType: '',
         notes: ''
       });
-
     } catch (error) {
-      console.error('Error submitting form:', error);
-      alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4969.');
+      console.error('Email sending failed:', error);
+      alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4960.');
     } finally {
       setIsSubmitting(false);
     }
