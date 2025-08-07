@@ -127,7 +127,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
   const Logo = () => (
     <div className="text-center md:text-left mb-4">
-      <img src={`${import.meta.env.BASE_URL}/logo.jpeg`} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-white" />
+      <img src={'/logo.jpeg'} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-white" />
       {/* <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-700 mb-1">
         TIME BACK
       </h1>
