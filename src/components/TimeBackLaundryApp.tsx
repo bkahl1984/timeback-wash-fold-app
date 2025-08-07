@@ -88,14 +88,25 @@ const TimeBackLaundryApp: React.FC = () => {
     };
 
     try {
-      const result = await emailjs.send(
+      // First: Send to YOU (business) - New Order Email Template
+      const newOrderResult = await emailjs.send(
         import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_JS_TEMPLATE_ID,
+        import.meta.env.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID,
         templateParams,
         import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
       );
 
-      console.log('Email successfully sent!', result.text);
+      console.log('New Order Email successfully sent!', newOrderResult.text);
+
+      // Second: Send confirmation to CUSTOMER - Order Confirmation Template
+      const confirmationOrderResult = await emailjs.send(
+        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
+        import.meta.env.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID,
+        templateParams,
+        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+      );
+
+      console.log('Order Confirmation Email successfully sent!', confirmationOrderResult.text);
       alert(`Booking request submitted for ${contactForm.name}! We'll contact you within 1 hour to confirm your pickup.`);
 
       setContactForm({

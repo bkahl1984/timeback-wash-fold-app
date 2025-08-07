@@ -30,7 +30,8 @@ jobs:
       - name: Inject environment variables from GitHub Secrets
         run: |
           echo "VITE_EMAIL_JS_SERVICE_ID=${{ secrets.VITE_EMAIL_JS_SERVICE_ID }}" >> .env
-          echo "VITE_EMAIL_JS_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_TEMPLATE_ID }}" >> .env
+          echo "VITE_EMAIL_JS_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID }}" >> .env
+          echo "VITE_EMAIL_JS_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID }}" >> .env
           echo "VITE_EMAIL_JS_PUBLIC_KEY=${{ secrets.VITE_EMAIL_JS_PUBLIC_KEY }}" >> .env
 
       - name: Build Vite project
