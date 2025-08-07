@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
+import { removeDotsFromEmail } from '../utils/removeDotsFromEmail';
 
 interface Service {
   icon: React.ReactNode;
@@ -78,7 +79,7 @@ const TimeBackLaundryApp: React.FC = () => {
     const templateParams = {
       name: contactForm.name,
       phone: contactForm.phone,
-      email: contactForm.email,
+      email: removeDotsFromEmail(contactForm.email),
       address: contactForm.address,
       serviceDate: contactForm.serviceDate,
       pickupTime: contactForm.pickupTime,
