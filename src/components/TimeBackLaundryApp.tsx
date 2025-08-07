@@ -122,7 +122,12 @@ const TimeBackLaundryApp: React.FC = () => {
         orderId,
       });
     } catch (error) {
-      console.error('Email sending failed:', error);
+      console.error('EmailJS sending failed:', error);
+      if (error) {
+        alert(`Email failed: ${error}`);
+      } else {
+        alert('Something went wrong. Please try again.');
+      }
       alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4960.');
     } finally {
       setIsSubmitting(false);
