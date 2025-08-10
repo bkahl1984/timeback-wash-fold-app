@@ -2,7 +2,6 @@ import React, { useState } from 'react';
 import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
-import { removeDotsFromEmail } from '../utils/removeDotsFromEmail';
 
 interface Service {
   icon: React.ReactNode;
@@ -43,7 +42,7 @@ const TimeBackLaundryApp: React.FC = () => {
       icon: <Shirt className="w-8 h-8 text-slate-700" />,
       title: "Wash & Fold",
       description: "Professional washing, drying, and folding of your everyday clothes",
-      price: "$2.00/lb • $35.00 for 13 gallon bag"
+      price: "$35 per 13-gallon bag (up to 20 lb included) • +$2.00/lb over included weight",
     },
     {
       icon: <Truck className="w-8 h-8 text-slate-700" />,
@@ -79,7 +78,7 @@ const TimeBackLaundryApp: React.FC = () => {
     const templateParams = {
       name: contactForm.name,
       phone: contactForm.phone,
-      email: removeDotsFromEmail(contactForm.email),
+      email: contactForm.email,
       address: contactForm.address,
       serviceDate: contactForm.serviceDate,
       pickupTime: contactForm.pickupTime,
@@ -123,11 +122,11 @@ const TimeBackLaundryApp: React.FC = () => {
       });
     } catch (error) {
       console.error('EmailJS sending failed:', error);
-      if (error) {
-        alert(`Email failed: ${error}`);
-      } else {
-        alert('Something went wrong. Please try again.');
-      }
+      // if (error) {
+      //   alert(`Email failed: ${error}`);
+      // } else {
+      //   alert('Something went wrong. Please try again.');
+      // }
       alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4960.');
     } finally {
       setIsSubmitting(false);
