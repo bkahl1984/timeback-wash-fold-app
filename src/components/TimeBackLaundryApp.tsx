@@ -226,10 +226,6 @@ const TimeBackLaundryApp: React.FC = () => {
 
               <div className="space-y-4 lg:space-y-6">
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
-                  <User className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
-                  <span className="md:text-lg lg:text-xl">Kinsey Kahl</span>
-                </div>
-                <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Phone className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
                   <span className="md:text-lg lg:text-xl">(540) 580-4969</span>
                 </div>
