@@ -53,9 +53,9 @@ const TimeBackLaundryApp: React.FC = () => {
   ];
 
   const features = [
-    "Same-day service available",
+    "Next-day service available",
     "Hypoallergenic options",
-    "24-hour turnaround",
+    "48-hour turnaround",
     "Quality guarantee"
   ];
 
@@ -172,12 +172,15 @@ const TimeBackLaundryApp: React.FC = () => {
             <div className="bg-slate-50 p-6 lg:p-8 xl:p-10 border-t border-slate-200">
               <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 mb-3 lg:mb-4 text-center md:text-left">About TimeBack</h2>
               <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed">
-                <strong>New in 2025!</strong> TimeBack Wash and Fold was created by a local stay-at-home mom who understands the daily juggle of family life.
-                We're here to serve the Cave Spring, VA area with one simple mission: <em>give you your time back</em>.
+                <strong>New in 2025!</strong> TimeBack Wash and Fold was created by me, a local stay-at-home mom who understands the daily juggle of family life.
+                I'm here to serve <strong>locally in the Cave Spring, VA area ONLY</strong> with one simple mission: <em>give you your time back</em>.
               </p>
               <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed mt-3">
                 Whether you're a busy parent, working professional, or anyone who'd rather spend their time on what matters most -
-                let us handle the laundry while you focus on living your life.
+                let me handle the laundry while you focus on living your life.
+              </p>
+              <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed mt-3">
+                You can call me at <strong>540.580.4969</strong> to request a service and pickup OR fill the below form out with your service request needs and I'll call you back to confirm within 24 hours.
               </p>
             </div>
 
@@ -235,15 +238,10 @@ const TimeBackLaundryApp: React.FC = () => {
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <MapPin className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
-                  <span className="md:text-lg lg:text-xl">Serving Your Neighborhood</span>
+                  <span className="md:text-lg lg:text-xl">Serving Neighborhoods in Cave Spring, VA</span>
                 </div>
               </div>
 
-              <div className="mt-6 lg:mt-8 text-center md:text-left">
-                <p className="text-sm md:text-base lg:text-lg text-slate-500">
-                  Operating Hours: Mon-Fri 9AM-7PM | Sat-Sun 10AM-5PM
-                </p>
-              </div>
             </div>
           </div>
 
