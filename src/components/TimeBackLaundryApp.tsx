@@ -252,7 +252,7 @@ const TimeBackLaundryApp: React.FC = () => {
                 <>
                   <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">Request Service</h3>
                   <p className="text-sm md:text-base lg:text-lg text-slate-600 mb-6 lg:mb-8 text-center md:text-left">
-                    Fill out the form below and we'll get back to you to schedule your service.
+                    Fill out the form below and I'll get back to you to schedule your service.
                   </p>
 
                   <form onSubmit={handleContactFormSubmit} className="space-y-4 lg:space-y-6">
