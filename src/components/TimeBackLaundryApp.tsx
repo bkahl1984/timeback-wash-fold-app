@@ -47,7 +47,7 @@ const TimeBackLaundryApp: React.FC = () => {
     {
       icon: <Truck className="w-8 h-8 text-slate-700" />,
       title: "Pickup & Delivery",
-      description: "Convenient doorstep service - we come to you!",
+      description: "Convenient doorstep service - I come to you!",
       price: "Free over $35 • $10 below $35"
     }
   ];
@@ -107,7 +107,7 @@ const TimeBackLaundryApp: React.FC = () => {
       );
 
       console.log('Order Confirmation Email successfully sent!', confirmationOrderResult.text);
-      alert(`Booking request submitted for ${contactForm.name}! We'll contact you within 1 hour to confirm your pickup.`);
+      alert(`Booking request submitted for ${contactForm.name}! I'll contact you within 1 hour to confirm your pickup.`);
 
       setContactForm({
         name: '',
@@ -463,7 +463,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     </button>
 
                     <p className="text-xs md:text-sm lg:text-base text-slate-500 text-center md:text-left mt-4">
-                      We'll contact you within 24 hours to confirm your service appointment.
+                      I'll contact you within 24 hours to confirm your service appointment.
                     </p>
                   </form>
                 </>
