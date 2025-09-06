@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock } from 'lucide-react';
+import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
 
@@ -41,7 +41,7 @@ const TimeBackLaundryApp: React.FC = () => {
     {
       icon: <Shirt className="w-8 h-8 text-slate-700" />,
       title: "Wash & Fold",
-      description: "Professional washing, drying, and folding of your everyday clothes",
+      description: "Washing, drying, and folding of your everyday clothes",
       price: "$35 per 13-gallon bag (up to 20 lb included) • +$2.00/lb over included weight",
     },
     {
@@ -186,7 +186,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
             {/* Services Section */}
             <div className="p-6 lg:p-8 xl:p-10">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">Our Services</h2>
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">My Services</h2>
               <div className="space-y-4 lg:space-y-6">
                 {services.map((service, index) => (
                   <div key={index} className="bg-slate-50 rounded-lg p-4 lg:p-6 border border-slate-200 hover:shadow-md transition-shadow">
@@ -231,7 +231,7 @@ const TimeBackLaundryApp: React.FC = () => {
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Phone className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
                   <span className="md:text-lg lg:text-xl">(540) 580-4969</span>
-                </div>
+                </div> 
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Mail className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
                   <span className="md:text-lg lg:text-xl">timebackwashandfold@gmail.com</span>
@@ -240,8 +240,13 @@ const TimeBackLaundryApp: React.FC = () => {
                   <MapPin className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
                   <span className="md:text-lg lg:text-xl">Serving Neighborhoods in Cave Spring, VA</span>
                 </div>
+                <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
+                  <Facebook className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
+                  <a className="hover:underline" target="_blank" href="https://www.facebook.com/timebackwashandfold">
+                    <span className="md:text-lg lg:text-xl">TimeBack Wash & Fold FB Page</span>
+                  </a>
               </div>
-
+              </div>
             </div>
           </div>
 
