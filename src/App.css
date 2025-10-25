@@ -79,3 +79,11 @@ input[type="date"]::-webkit-datetime-edit {
 .price-text-color {
   color: #2EADC3;
 }
+
+.border-pricing-color {
+  border-color: #2EADC3;
+}
+
+.star-text-color {
+  color: #F45E39;
+}

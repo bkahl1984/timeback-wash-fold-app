@@ -39,13 +39,13 @@ const TimeBackLaundryApp: React.FC = () => {
 
   const services: Service[] = [
     {
-      icon: <Shirt className="w-8 h-8 text-slate-700" />,
+      icon: <Shirt className="w-8 h-8 price-text-color" />,
       title: "Wash & Fold",
       description: "Washing, drying, and folding of your everyday clothes",
       price: "$35 per 13-gallon bag (up to 20 lb included) • +$2.00/lb over included weight",
     },
     {
-      icon: <Truck className="w-8 h-8 text-slate-700" />,
+      icon: <Truck className="w-8 h-8 price-text-color" />,
       title: "Pickup & Delivery",
       description: "Convenient doorstep service - I come to you!",
       price: "Free over $35 • $10 below $35"
@@ -141,7 +141,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
   const Logo = () => (
     <div className="text-center md:text-left mb-4">
-      <img src={'/logo5-colorful.png'} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-white" />
+      <img src={'/logo5-colorful.png'} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-pricing-color" />
       {/* <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-700 mb-1">
         TIME BACK
       </h1>
@@ -160,7 +160,7 @@ const TimeBackLaundryApp: React.FC = () => {
           {/* Column 1: Header & Services */}
           <div className="md:order-1 lg:order-1 md:col-span-1 lg:col-span-1">
             {/* Header */}
-            <div className="bg-white p-6 lg:p-8 xl:p-10 tile-background-color">
+            <div className="p-6 lg:p-8 xl:p-10 tile-background-color">
               <Logo />
               <p className="text-center md:text-left mt-2 md:text-base lg:text-lg xl:text-xl primary-text-color">
                 {/* Professional Laundry & Dry Cleaning Services */}
@@ -169,7 +169,7 @@ const TimeBackLaundryApp: React.FC = () => {
             </div>
 
             {/* About Section */}
-            <div className="tile-background-color p-6 lg:p-8 xl:p-10 border-t border-slate-200 primary-text-color">
+            <div className="tile-background-color p-6 lg:p-8 xl:p-10 border-t border-pricing-color primary-text-color">
               <h2 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-4 text-center md:text-left">About TimeBack</h2>
               <p className="text-sm md:text-base lg:text-lg primary-text-color leading-relaxed">
                 <strong>New in 2025!</strong> TimeBack Wash and Fold is my personal side hustle, created as a way to help busy families while earning a little extra for my own. As a local mom who understands the daily juggle of family 
@@ -188,7 +188,7 @@ const TimeBackLaundryApp: React.FC = () => {
               <h2 className="text-xl md:text-2xl lg:text-3xl font-bold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">My Services</h2>
               <div className="space-y-4 lg:space-y-6">
                 {services.map((service, index) => (
-                  <div key={index} className="bg-slate-50 rounded-lg p-4 lg:p-6 border border-slate-200 hover:shadow-md transition-shadow">
+                  <div key={index} className="bg-slate-50 rounded-lg p-4 lg:p-6 border border-pricing-color  hover:shadow-md transition-shadow">
                     <div className="flex items-start space-x-3 lg:space-x-4">
                       <div className="flex-shrink-0 mt-1">
                         <div className="w-8 h-8 lg:w-10 lg:h-10 xl:w-12 xl:h-12 text-slate-700 flex items-center justify-center">
@@ -215,7 +215,7 @@ const TimeBackLaundryApp: React.FC = () => {
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
-                    <Star className="w-5 h-5 lg:w-6 lg:h-6 text-yellow-500 flex-shrink-0" />
+                    <Star className="w-5 h-5 lg:w-6 lg:h-6 star-text-color flex-shrink-0" />
                     <span className="text-sm md:text-base lg:text-lg text-slate-600">{feature}</span>
                   </div>
                 ))}
@@ -223,26 +223,26 @@ const TimeBackLaundryApp: React.FC = () => {
             </div>
 
             {/* Contact Information */}
-            <div className="p-6 lg:p-8 xl:p-10 border-t border-slate-200">
+            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
               <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
 
               <div className="space-y-4 lg:space-y-6">
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
-                  <Phone className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
+                  <Phone className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <span className="md:text-lg lg:text-xl">(540) 580-4969</span>
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
-                  <Facebook className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
+                  <Facebook className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <a className="hover:underline" target="_blank" href="https://www.facebook.com/timebackwashandfold">
                     <span className="md:text-lg lg:text-xl">TimeBack Wash & Fold FB Page</span>
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
-                  <Mail className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
+                  <Mail className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <span className="md:text-lg lg:text-xl">timebackwashandfold@gmail.com</span>
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
-                  <MapPin className="w-6 h-6 lg:w-7 lg:h-7 text-slate-700" />
+                  <MapPin className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <span className="md:text-lg lg:text-xl">Serving Cave Spring, VA</span>
                 </div>
               </div>
@@ -263,7 +263,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     {/* Name Field */}
                     <div>
                       <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <User className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        <User className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                         Full Name *
                       </label>
                       <input
@@ -272,7 +272,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         value={contactForm.name}
                         onChange={handleContactFormChange}
                         required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
                         placeholder="Enter your full name"
                       />
                     </div>
@@ -280,7 +280,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     {/* Phone Field */}
                     <div>
                       <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Phone className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        <Phone className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                         Phone Number *
                       </label>
                       <input
@@ -289,7 +289,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         value={contactForm.phone}
                         onChange={handleContactFormChange}
                         required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
                         placeholder="(555) 555-5555"
                       />
                     </div>
@@ -297,7 +297,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     {/* Address Field */}
                     <div>
                       <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Home className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        <Home className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                         Service Address *
                       </label>
                       <input
@@ -306,7 +306,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         value={contactForm.address}
                         onChange={handleContactFormChange}
                         required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
                         placeholder="123 Main St, City, State 12345"
                       />
                     </div>
@@ -314,7 +314,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     {/* Email Field */}
                     <div>
                       <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Mail className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        <Mail className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                         Email Address *
                       </label>
                       <input
@@ -323,7 +323,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         value={contactForm.email}
                         onChange={handleContactFormChange}
                         required
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
                         placeholder="your@email.com"
                       />
                     </div>
@@ -333,7 +333,7 @@ const TimeBackLaundryApp: React.FC = () => {
                       {/* Service Date Field */}
                       <div>
                         <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                          <Calendar className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                          <Calendar className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                           Preferred Service Date *
                         </label>
                         <div className="relative">
@@ -346,7 +346,7 @@ const TimeBackLaundryApp: React.FC = () => {
                               onChange={handleContactFormChange}
                               min={getTomorrowDate()}
                               required
-                              className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                              className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
                               style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
                             />
                           )}
@@ -359,7 +359,7 @@ const TimeBackLaundryApp: React.FC = () => {
                                 onChange={handleContactFormChange}
                                 min={getTomorrowDate()}
                                 required
-                                className="w-full px-4 py-3 h-12 text-left lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
+                                className="w-full px-4 py-3 h-12 text-left lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white text-slate-900 placeholder:text-slate-400"
                                 style={{ color: contactForm.serviceDate === '' || 'mm/dd/yyyy' ? '#94a3b8' : '#0f172a' }}
                               />
                               < div className="absolute inset-y-0 right-0 flex items-center pr-4 pointer-events-none">
@@ -375,7 +375,7 @@ const TimeBackLaundryApp: React.FC = () => {
                       {/* Pickup Time Field */}
                       <div>
                         <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                          <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                          <Clock className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                           Preferred Pickup Time *
                         </label>
                         <div className="relative">
@@ -384,7 +384,7 @@ const TimeBackLaundryApp: React.FC = () => {
                             value={contactForm.pickupTime}
                             onChange={handleContactFormChange}
                             required
-                            className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
+                            className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12 text-slate-900 placeholder:text-slate-400"
                             style={{ color: contactForm.pickupTime === '' ? '#94a3b8' : '#0f172a' }}
                           >
                             <option value="" style={{ color: '#94a3b8' }}>Select time window</option>
@@ -406,7 +406,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     {/* Wash Type Dropdown */}
                     <div>
                       <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
-                        <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2" />
+                        <Sparkles className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
                         Wash Type *
                       </label>
                       <div className="relative">
@@ -415,7 +415,7 @@ const TimeBackLaundryApp: React.FC = () => {
                           value={contactForm.washType}
                           onChange={handleContactFormChange}
                           required
-                          className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12"
+                          className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg appearance-none bg-white pr-12"
                           style={{ color: contactForm.washType === '' ? '#94a3b8' : '#0f172a' }}
                         >
                           <option value="" style={{ color: '#94a3b8' }}>Select wash type</option>
@@ -442,7 +442,7 @@ const TimeBackLaundryApp: React.FC = () => {
                         value={contactForm.notes}
                         onChange={handleContactFormChange}
                         rows={4}
-                        className="w-full px-4 py-3 lg:py-4 border border-slate-300 rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
                         placeholder="Any special instructions, stain alerts, or pickup preferences..."
                       />
                     </div>
