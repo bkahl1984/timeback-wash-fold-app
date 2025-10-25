@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
+import { Accordion, type AccordionItem, type Item } from './Accordion';
 
 interface Service {
   icon: React.ReactNode;
@@ -151,6 +152,61 @@ const TimeBackLaundryApp: React.FC = () => {
     </div>
   );
 
+  const items: Item[] = [
+    {
+      id: "app",
+      title: "Do you have an app?",
+      content: (
+        <p>Not currently</p>
+      ),
+      defaultOpen: false,
+    },
+    {
+      id: "how",
+      title: "How does someone provide us laundry?",
+      content: <p>You receive a notification minutes prior to our arrival. Set your laundry outside your door.  Typically, we ask that you provide it in a bag (trash bag, etc).</p>
+    },
+    {
+      id: "time",
+      title: "What is your turn around time?",
+      content: (
+        <p>Depends on what the request is for, but for an average order of 3-4 bags of clothes it's between 24-48 hours.</p>
+      ),
+    },
+    {
+      id: "payment",
+      title: "What forms of payment do you accept?",
+      content: (
+        <ul className="list-disc pl-5">
+          <li>Venmo</li>
+          <li>Cash App</li>
+          <li>Zelle</li>
+        </ul>
+      ),
+    },
+    {
+      id: "tips",
+      title: "Do we accept tips?",
+      content: (
+        <p>Yes, you can apply a tip to your choice of payment app when billed.</p>
+      ),
+    },
+    {
+      id: "detergent",
+      title: "Do we allow people to provide their own detergent?",
+      content: (
+        <p>Yes</p>
+      ),
+    },
+    {
+      id: "sanitize",
+      title: "How do you santize your machines?",
+      content: (
+        <p>We clean and sanitize our wash and fold machines after every client and perform a deep clean weekly. After each load, we run an empty rinse cycle with a hypoallergenic, disinfecting cleaner to remove any residue. Once a week, we fully wipe down and sanitize the washer drum, detergent tray, door seals, and dryer surfaces, ensuring everything stays fresh, hygienic, and safe for the next family’s laundry.</p>
+      ),
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br pt-8 pb-8 lg:p-8">
       <div className="max-w-sm mx-auto md:max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -164,7 +220,7 @@ const TimeBackLaundryApp: React.FC = () => {
               <Logo />
               <p className="text-center md:text-left mt-2 md:text-base lg:text-lg xl:text-xl primary-text-color">
                 {/* Professional Laundry & Dry Cleaning Services */}
-                <i><b>"Buy back your time — one load at a time."</b></i>
+                <i><b>Buy back your time, one load at a time.</b></i>
               </p>
             </div>
 
@@ -195,7 +251,7 @@ const TimeBackLaundryApp: React.FC = () => {
                           {service.icon}
                         </div>
                       </div>
-                      <div className="flex-grow">
+                      <div className="flex-grow text-left">
                         <h3 className="font-semibold text-slate-800 lg:text-lg xl:text-xl">{service.title}</h3>
                         <p className="primary-text-color text-sm lg:text-base xl:text-lg mt-1">{service.description}</p>
                         <p className="price-text-color font-semibold mt-2 lg:text-lg xl:text-xl">{service.price}</p>
@@ -222,8 +278,16 @@ const TimeBackLaundryApp: React.FC = () => {
               </div>
             </div>
 
-            {/* Contact Information */}
+            {/* Frequently Asked Questions Section */}
             <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Frequently Asked Questions</h3>
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
+                <Accordion items={items} />
+              </div>
+            </div>
+
+            {/* Contact Information */}
+            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color">
               <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
 
               <div className="space-y-4 lg:space-y-6">
