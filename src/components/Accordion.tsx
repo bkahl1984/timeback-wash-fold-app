@@ -1,13 +1,13 @@
 import React, { useRef, useState, useLayoutEffect } from "react";
 
-export type Item = {
+export type AccordionItem = {
   id: string;
   title: string;
   content: React.ReactNode;
   defaultOpen?: boolean;
 };
 
-export const AccordionItem: React.FC<Item> = ({
+export const AccordionItem: React.FC<AccordionItem> = ({
   id,
   title,
   content,

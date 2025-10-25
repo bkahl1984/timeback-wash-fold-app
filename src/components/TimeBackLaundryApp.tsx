@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock, Facebook } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
-import { Accordion, type AccordionItem, type Item } from './Accordion';
+import { Accordion, type AccordionItem } from './Accordion';
 
 interface Service {
   icon: React.ReactNode;
@@ -152,7 +152,7 @@ const TimeBackLaundryApp: React.FC = () => {
     </div>
   );
 
-  const items: Item[] = [
+  const items: AccordionItem[] = [
     {
       id: "app",
       title: "Do you have an app?",
