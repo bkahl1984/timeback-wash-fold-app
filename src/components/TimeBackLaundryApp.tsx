@@ -141,7 +141,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
   const Logo = () => (
     <div className="text-center md:text-left mb-4">
-      <img src={'/logo.jpeg'} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-white" />
+      <img src={'/logo5-colorful.png'} alt="TimeBack Wash & Fold Logo" className="mx-auto w-90 h-90 rounded-full shadow-md border-4 border-white" />
       {/* <h1 className="text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold text-slate-700 mb-1">
         TIME BACK
       </h1>
@@ -152,7 +152,7 @@ const TimeBackLaundryApp: React.FC = () => {
   );
 
   return (
-    <div className="min-h-screen bg-gradient-to-br from-slate-700 to-slate-900 pt-8 pb-8 lg:p-8">
+    <div className="min-h-screen bg-gradient-to-br pt-8 pb-8 lg:p-8">
       <div className="max-w-sm mx-auto md:max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Three Column Layout for Desktop, Two for Tablet */}
         <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-0">
@@ -160,32 +160,32 @@ const TimeBackLaundryApp: React.FC = () => {
           {/* Column 1: Header & Services */}
           <div className="md:order-1 lg:order-1 md:col-span-1 lg:col-span-1">
             {/* Header */}
-            <div className="bg-white p-6 lg:p-8 xl:p-10">
+            <div className="bg-white p-6 lg:p-8 xl:p-10 tile-background-color">
               <Logo />
-              <p className="text-center md:text-left text-slate-600 mt-2 md:text-base lg:text-lg xl:text-xl">
+              <p className="text-center md:text-left mt-2 md:text-base lg:text-lg xl:text-xl primary-text-color">
                 {/* Professional Laundry & Dry Cleaning Services */}
                 <i><b>"Buy back your time — one load at a time."</b></i>
               </p>
             </div>
 
             {/* About Section */}
-            <div className="bg-slate-50 p-6 lg:p-8 xl:p-10 border-t border-slate-200">
-              <h2 className="text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 mb-3 lg:mb-4 text-center md:text-left">About TimeBack</h2>
-              <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed">
+            <div className="tile-background-color p-6 lg:p-8 xl:p-10 border-t border-slate-200 primary-text-color">
+              <h2 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-4 text-center md:text-left">About TimeBack</h2>
+              <p className="text-sm md:text-base lg:text-lg primary-text-color leading-relaxed">
                 <strong>New in 2025!</strong> TimeBack Wash and Fold is my personal side hustle, created as a way to help busy families while earning a little extra for my own. As a local mom who understands the daily juggle of family 
                 life, I’m here to serve <strong>locally in the Cave Spring, VA area ONLY</strong> with one simple mission: <em>give you your time back</em>.
               </p>
-              <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed mt-3">
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-3">
                 Whether you’re a busy parent, working professional, or just someone who’d rather spend their time on what matters most, I’ll take laundry off your plate so you can focus on living your life.
               </p>
-              <p className="text-sm md:text-base lg:text-lg text-slate-600 leading-relaxed mt-3">
+              <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-3">
                 You can call me at <strong>540.580.4969</strong> to request a service and pickup OR fill the below form out with your service request needs and I'll call you back to confirm.
               </p>
             </div>
 
             {/* Services Section */}
-            <div className="p-6 lg:p-8 xl:p-10">
-              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">My Services</h2>
+            <div className="p-6 lg:p-8 xl:p-10 tile-background-color primary-text-color">
+              <h2 className="text-xl md:text-2xl lg:text-3xl font-bold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">My Services</h2>
               <div className="space-y-4 lg:space-y-6">
                 {services.map((service, index) => (
                   <div key={index} className="bg-slate-50 rounded-lg p-4 lg:p-6 border border-slate-200 hover:shadow-md transition-shadow">
@@ -197,8 +197,8 @@ const TimeBackLaundryApp: React.FC = () => {
                       </div>
                       <div className="flex-grow">
                         <h3 className="font-semibold text-slate-800 lg:text-lg xl:text-xl">{service.title}</h3>
-                        <p className="text-slate-600 text-sm lg:text-base xl:text-lg mt-1">{service.description}</p>
-                        <p className="text-blue-600 font-semibold mt-2 lg:text-lg xl:text-xl">{service.price}</p>
+                        <p className="primary-text-color text-sm lg:text-base xl:text-lg mt-1">{service.description}</p>
+                        <p className="price-text-color font-semibold mt-2 lg:text-lg xl:text-xl">{service.price}</p>
                       </div>
                     </div>
                   </div>
@@ -208,10 +208,10 @@ const TimeBackLaundryApp: React.FC = () => {
           </div>
 
           {/* Column 2: Features & Contact Info */}
-          <div className="md:order-2 lg:order-2 md:col-span-1 lg:col-span-1 bg-slate-50">
+          <div className="md:order-2 lg:order-2 md:col-span-1 lg:col-span-1 tile-background-color primary-text-color">
             {/* Features Section */}
             <div className="p-6 lg:p-8 xl:p-10">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 mb-3 lg:mb-6 text-center md:text-left">Why Choose TimeBack?</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Why Choose TimeBack?</h3>
               <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
                 {features.map((feature, index) => (
                   <div key={index} className="flex items-center space-x-3">
@@ -224,7 +224,7 @@ const TimeBackLaundryApp: React.FC = () => {
 
             {/* Contact Information */}
             <div className="p-6 lg:p-8 xl:p-10 border-t border-slate-200">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
 
               <div className="space-y-4 lg:space-y-6">
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
@@ -250,11 +250,11 @@ const TimeBackLaundryApp: React.FC = () => {
           </div>
 
           {/* Column 3: Contact Form */}
-          <div className="md:order-3 lg:order-3 md:col-span-2 lg:col-span-1 bg-slate-100">
+          <div className="md:order-3 lg:order-3 md:col-span-2 lg:col-span-1 tile-background-color">
             <div className="p-6 lg:p-8 xl:p-10">
               {!isSubmitted ? (
                 <>
-                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold text-slate-800 mb-4 lg:mb-6 text-center md:text-left">Request Service</h3>
+                  <h3 className="text-xl md:text-2xl lg:text-3xl font-bold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Request Service</h3>
                   <p className="text-sm md:text-base lg:text-lg text-slate-600 mb-6 lg:mb-8 text-center md:text-left">
                     Fill out the form below and I'll get back to you to schedule your service.
                   </p>
@@ -451,7 +451,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full bg-slate-700 text-white py-4 lg:py-5 rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
+                      className="w-full primary-submit-button text-white py-4 lg:py-5 rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
                     >
                       {isSubmitting ? (
                         <>
@@ -466,7 +466,7 @@ const TimeBackLaundryApp: React.FC = () => {
                       )}
                     </button>
 
-                    <p className="text-xs md:text-sm lg:text-base text-slate-500 text-center md:text-left mt-4">
+                    <p className="text-xs md:text-sm lg:text-base text-slate-500 text-center md:text-left mt-4 primary-text-color">
                       I'll contact you within 24 hours to confirm your service appointment.
                     </p>
                   </form>

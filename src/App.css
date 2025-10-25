@@ -1,5 +1,5 @@
 body {
-  background-color: #0B1E37;
+  background-color: #fff9f1;
 }
 
 #root {
@@ -53,4 +53,29 @@ input[type="date"] {
 
 input[type="date"]::-webkit-datetime-edit {
   text-align: left;
+}
+
+.tile-background-color {
+  background-color: #e9f7f6;
+}
+
+.primary-text-color {
+  color: #2a2a2a;
+}
+
+.accent-heading-text-color {
+  color: #09627E;
+}
+
+.primary-submit-button {
+  background-color: #f46a3a;
+  color: #ffffff;
+
+  &:hover {
+    background-color: #d55627;
+  }
+}
+
+.price-text-color {
+  color: #2EADC3;
 }
