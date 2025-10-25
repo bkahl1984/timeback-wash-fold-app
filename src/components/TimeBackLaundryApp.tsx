@@ -127,7 +127,7 @@ const TimeBackLaundryApp: React.FC = () => {
       // } else {
       //   alert('Something went wrong. Please try again.');
       // }
-      alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 580-4960.');
+      alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 314-8352.');
     } finally {
       setIsSubmitting(false);
     }
@@ -179,7 +179,7 @@ const TimeBackLaundryApp: React.FC = () => {
                 Whether you’re a busy parent, working professional, or just someone who’d rather spend their time on what matters most, I’ll take laundry off your plate so you can focus on living your life.
               </p>
               <p className="text-sm md:text-base lg:text-lg leading-relaxed mt-3">
-                You can call me at <strong>540.580.4969</strong> to request a service and pickup OR fill the below form out with your service request needs and I'll call you back to confirm.
+                You can call me at <strong>540.314.8352</strong> to request a service and pickup OR fill the below form out with your service request needs and I'll call you back to confirm.
               </p>
             </div>
 
