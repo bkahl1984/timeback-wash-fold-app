@@ -65,7 +65,7 @@ export const AccordionItem: React.FC<AccordionItem> = ({
   );
 };
 
-export const Accordion: React.FC<{ items: Item[] }> = ({ items }) => {
+export const Accordion: React.FC<{ items: AccordionItem[] }> = ({ items }) => {
   return (
     <div className="space-y-3">
       {items.map(item => (
