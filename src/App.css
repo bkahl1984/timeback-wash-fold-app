@@ -71,7 +71,8 @@ input[type="date"]::-webkit-datetime-edit {
   background-color: #f46a3a;
   color: #ffffff;
 
-  &:hover {
+  &:hover,
+  &:active {
     background-color: #d55627;
   }
 }

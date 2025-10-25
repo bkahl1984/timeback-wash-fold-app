@@ -229,7 +229,7 @@ const TimeBackLaundryApp: React.FC = () => {
               <div className="space-y-4 lg:space-y-6">
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Phone className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
-                  <span className="md:text-lg lg:text-xl">(540) 580-4969</span>
+                  <span className="md:text-lg lg:text-xl">(540) 314-8352</span>
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Facebook className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
@@ -451,7 +451,7 @@ const TimeBackLaundryApp: React.FC = () => {
                     <button
                       type="submit"
                       disabled={isSubmitting}
-                      className="w-full primary-submit-button text-white py-4 lg:py-5 rounded-lg font-semibold hover:bg-slate-800 transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
+                      className="w-full primary-submit-button text-white py-4 lg:py-5 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl"
                     >
                       {isSubmitting ? (
                         <>
