@@ -9,7 +9,6 @@ export type Testimonial = {
 };
 
 type Props = {
-  title?: string;
   items: Testimonial[];
 };
 
@@ -35,7 +34,7 @@ const Card: React.FC<{ children: React.ReactNode }> = ({ children }) => (
   </article>
 );
 
-export const Testimonials: React.FC<Props> = ({ title = "What neighbors are saying", items }) => {
+export const Testimonials: React.FC<Props> = ({ items }) => {
   return (
     <section aria-labelledby="testimonials-title" className="mx-auto max-w-5xl">
       <div className="text-left">
