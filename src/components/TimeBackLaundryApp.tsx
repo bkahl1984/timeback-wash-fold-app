@@ -1,8 +1,9 @@
 import React, { useState } from 'react';
-import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock, Facebook } from 'lucide-react';
+import { Shirt, Sparkles, Truck, Star, Phone, MapPin, Mail, Calendar, User, Home, Send, Clock, Facebook, Instagram } from 'lucide-react';
 import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
 import { Accordion, type AccordionItem } from './Accordion';
+import { Testimonials, type Testimonial } from './Testimonial';
 
 interface Service {
   icon: React.ReactNode;
@@ -207,6 +208,17 @@ const TimeBackLaundryApp: React.FC = () => {
     },
   ];
 
+  const testimonials: Testimonial[] = [
+    {
+      id: "1",
+      name: "Jennifer Blackwood.",
+      location: "Cave Spring, VA",
+      quote:
+        "TimeBack Wash and Fold - what a WONDERFUL concept and even better service. Great communication, excellent customer service and a superior job! I highly recommend!",
+      rating: 5,
+    },
+  ];
+
   return (
     <div className="min-h-screen bg-gradient-to-br pt-8 pb-8 lg:p-8">
       <div className="max-w-sm mx-auto md:max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden">
@@ -286,6 +298,14 @@ const TimeBackLaundryApp: React.FC = () => {
               </div>
             </div>
 
+            {/* Testimonial Section */}
+            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Testimonials</h3>
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
+                <Testimonials items={testimonials} />
+              </div>
+            </div>
+
             {/* Contact Information */}
             <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color">
               <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
@@ -298,7 +318,13 @@ const TimeBackLaundryApp: React.FC = () => {
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
                   <Facebook className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <a className="hover:underline" target="_blank" href="https://www.facebook.com/timebackwashandfold">
-                    <span className="md:text-lg lg:text-xl">TimeBack Wash & Fold FB Page</span>
+                    <span className="md:text-lg lg:text-xl">Facebook Page</span>
+                  </a>
+                </div>
+                <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
+                  <Instagram className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
+                  <a className="hover:underline" target="_blank" href="https://www.instagram.com/timebackwashandfold/">
+                    <span className="md:text-lg lg:text-xl">Instagram Page</span>
                   </a>
                 </div>
                 <div className="flex items-center space-x-3 lg:space-x-4 text-slate-600">
