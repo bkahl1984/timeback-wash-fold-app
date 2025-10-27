@@ -4,6 +4,8 @@ import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
 import { Accordion, type AccordionItem } from './Accordion';
 import { Testimonials, type Testimonial } from './Testimonial';
+import { MdLocalLaundryService } from 'react-icons/md';
+import { IoBag } from 'react-icons/io5';
 
 interface Service {
   icon: React.ReactNode;
@@ -22,6 +24,7 @@ interface ContactFormData {
   washType: string;
   notes: string;
   orderId: string;
+  laundryBagCount: string;
 }
 
 const TimeBackLaundryApp: React.FC = () => {
@@ -36,6 +39,7 @@ const TimeBackLaundryApp: React.FC = () => {
     washType: '',
     notes: '',
     orderId: '',
+    laundryBagCount: '',
   });
   const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -86,6 +90,7 @@ const TimeBackLaundryApp: React.FC = () => {
       pickupTime: contactForm.pickupTime,
       washType: contactForm.washType,
       notes: contactForm.notes || 'None provided',
+      laundryBagCount: contactForm.laundryBagCount,
       orderId,
     };
 
@@ -109,7 +114,7 @@ const TimeBackLaundryApp: React.FC = () => {
       );
 
       console.log('Order Confirmation Email successfully sent!', confirmationOrderResult.text);
-      alert(`Booking request submitted for ${contactForm.name}! I'll contact you within 1 hour to confirm your pickup.`);
+      alert(`Booking request submitted for ${contactForm.name}! I'll contact you within a few hours to confirm your pickup.`);
 
       setContactForm({
         name: '',
@@ -121,6 +126,7 @@ const TimeBackLaundryApp: React.FC = () => {
         washType: '',
         notes: '',
         orderId,
+        laundryBagCount: '',
       });
     } catch (error) {
       console.error('EmailJS sending failed:', error);
@@ -520,6 +526,23 @@ const TimeBackLaundryApp: React.FC = () => {
                           </svg>
                         </div>
                       </div>
+                    </div>
+
+                    {/* Bags of Laundry Dropdown */}
+                    <div>
+                      <label className="block text-left text-sm md:text-base lg:text-lg font-semibold text-slate-700 mb-2">
+                        <IoBag className="w-4 h-4 md:w-5 md:h-5 lg:w-6 lg:h-6 inline mr-2 price-text-color" />
+                        Bags of Laundy *
+                      </label>
+                      <input
+                        type="text"
+                        name="laundryBagCount"
+                        value={contactForm.laundryBagCount}
+                        onChange={handleContactFormChange}
+                        required
+                        className="w-full px-4 py-3 lg:py-4 border border-pricing-color rounded-lg focus:ring-2 focus:ring-slate-500 focus:border-transparent text-base lg:text-lg"
+                        placeholder="How many bags of laundry?"
+                      />
                     </div>
 
                     {/* Notes Field */}
