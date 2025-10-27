@@ -4,7 +4,6 @@ import emailjs from '@emailjs/browser';
 import { generateConfirmationNumber } from '../utils/confirmation';
 import { Accordion, type AccordionItem } from './Accordion';
 import { Testimonials, type Testimonial } from './Testimonial';
-import { MdLocalLaundryService } from 'react-icons/md';
 import { IoBag } from 'react-icons/io5';
 
 interface Service {
