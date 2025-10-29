@@ -6,6 +6,21 @@ import { Accordion, type AccordionItem } from './Accordion';
 import { Testimonials, type Testimonial } from './Testimonial';
 import { IoBag } from 'react-icons/io5';
 
+// Option A: init once (then omit 4th arg in send)
+const SERVICE_ID = import.meta.env.VITE_EMAIL_JS_SERVICE_ID;
+const NEW_ORDER_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID;
+const CONFIRMATION_TEMPLATE_ID = import.meta.env.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID;
+const PUBLIC_KEY = import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY;
+
+if (!SERVICE_ID || !NEW_ORDER_TEMPLATE_ID || !CONFIRMATION_TEMPLATE_ID || !PUBLIC_KEY) {
+  // Fail fast at module load so you see it immediately in prod logs
+  // (Remove this if you prefer to handle at submit time.)
+  console.error({ SERVICE_ID, NEW_ORDER_TEMPLATE_ID, CONFIRMATION_TEMPLATE_ID, PUBLIC_KEY });
+  throw new Error('Missing EmailJS env vars');
+}
+
+emailjs.init(PUBLIC_KEY);
+
 interface Service {
   icon: React.ReactNode;
   title: string;
@@ -96,20 +111,20 @@ const TimeBackLaundryApp: React.FC = () => {
     try {
       // First: Send to YOU (business) - New Order Email Template
       const newOrderResult = await emailjs.send(
-        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID,
+        SERVICE_ID,
+        NEW_ORDER_TEMPLATE_ID,
         templateParams,
-        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY,
+        PUBLIC_KEY,
       );
 
       console.log('New Order Email successfully sent!', newOrderResult.text);
 
       // Second: Send confirmation to CUSTOMER - Order Confirmation Template
       const confirmationOrderResult = await emailjs.send(
-        import.meta.env.VITE_EMAIL_JS_SERVICE_ID,
-        import.meta.env.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID,
+        SERVICE_ID,
+        CONFIRMATION_TEMPLATE_ID,
         templateParams,
-        import.meta.env.VITE_EMAIL_JS_PUBLIC_KEY
+        PUBLIC_KEY
       );
 
       console.log('Order Confirmation Email successfully sent!', confirmationOrderResult.text);
