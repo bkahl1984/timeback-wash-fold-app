@@ -149,22 +149,6 @@ const TimeBackLaundryApp: React.FC = () => {
       // } else {
       //   alert('Something went wrong. Please try again.');
       // }
-
-      // Safely handle both Error objects and non-Error throws
-      if (error instanceof Error) {
-        console.error("Message:", error.message);
-        console.error("Stack:", error.stack);
-      }
-
-      // If the error has a response body (common in fetch/axios/EmailJS)
-      if ((error as any)?.response) {
-        console.error("Response:", (error as any).response);
-      }
-
-      // If the error contains a status code or text
-      console.error("Error name:", (error as any)?.name);
-      console.error("Error details:", (error as any)?.text || (error as any)?.error);
-
       alert('Sorry, there was an error submitting your request. Please try again or call us directly at (540) 314-8352.');
     } finally {
       setIsSubmitting(false);
