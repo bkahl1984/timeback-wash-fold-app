@@ -4,6 +4,7 @@ on:
   push:
     branches:
       - main
+  workflow_dispatch:
 
 permissions:
   contents: write
@@ -22,23 +23,37 @@ jobs:
       - name: Setup Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 18
+          node-version: 20
+          cache: npm
 
       - name: Install dependencies
-        run: npm install
+        run: npm ci
 
-      - name: Inject environment variables from GitHub Secrets
+      # ✅ Inject the EXACT keys your app reads, into .env.production
+      - name: Inject environment variables
         run: |
-          echo "VITE_EMAIL_JS_SERVICE_ID=${{ secrets.VITE_EMAIL_JS_SERVICE_ID }}" >> .env
-          echo "VITE_EMAIL_JS_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID }}" >> .env
-          echo "VITE_EMAIL_JS_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID }}" >> .env
-          echo "VITE_EMAIL_JS_PUBLIC_KEY=${{ secrets.VITE_EMAIL_JS_PUBLIC_KEY }}" >> .env
+          cat > .env.production << 'EOF'
+          VITE_EMAIL_JS_SERVICE_ID=${{ secrets.VITE_EMAIL_JS_SERVICE_ID }}
+          VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_NEW_ORDER_TEMPLATE_ID }}
+          VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID=${{ secrets.VITE_EMAIL_JS_CONFIRMATION_TEMPLATE_ID }}
+          VITE_EMAIL_JS_PUBLIC_KEY=${{ secrets.VITE_EMAIL_JS_PUBLIC_KEY }}
+          EOF
+
+      # (Optional) sanity check without leaking values
+      - name: Verify env keys present (redacted)
+        run: |
+          echo "----- .env.production KEYS PRESENT -----"
+          grep -E '^[A-Z_]+=.*' .env.production | sed 's/=.*$/=<redacted>/'
 
       - name: Build Vite project
         run: npm run build
+        # If your site is served under a subpath (not a custom domain),
+        # either set base in vite.config.ts or do:
+        # run: npm run build -- --base=/YOUR_REPO_NAME/
 
       - name: Add CNAME to dist
-        run: cp public/CNAME dist/CNAME
+        run: |
+          if [ -f public/CNAME ]; then cp public/CNAME dist/CNAME; fi
 
       - name: Deploy to GitHub Pages
         uses: peaceiris/actions-gh-pages@v3
