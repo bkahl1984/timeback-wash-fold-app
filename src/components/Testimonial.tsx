@@ -46,7 +46,7 @@ export const Testimonials: React.FC<Props> = ({ items }) => {
               {Array.from({ length: 5 }).map((_, i) => (
                 <Star key={i} filled={i < rating} className={`h-4 w-4 ${i < rating ? "text-sky-600" : "text-sky-300"}`} />
               ))}
-              <span className="sr-only">{rating} out of 5 stars</span>
+              <span className="sr-only">{rating} Out of 5 stars</span>
             </div>
 
             {/* Quote */}
