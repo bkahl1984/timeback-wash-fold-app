@@ -4,6 +4,7 @@ export type Testimonial = {
   id: string;
   name: string;
   location?: string;
+  date?: string;
   quote: string;
   rating?: 1 | 2 | 3 | 4 | 5;
 };
@@ -38,7 +39,7 @@ export const Testimonials: React.FC<Props> = ({ items }) => {
   return (
     <section aria-labelledby="testimonials-title" className="mx-auto max-w-5xl">
       <div className="text-left">
-        {items.map(({ id, name, location, quote, rating = 5 }) => (
+        {items.map(({ id, name, location, date, quote, rating = 5 }) => (
           <Card key={id}>
             {/* Rating */}
             <div className="mb-2 flex items-center gap-1 text-sky-600">
@@ -61,6 +62,7 @@ export const Testimonials: React.FC<Props> = ({ items }) => {
               <div className="leading-tight">
                 <p className="font-medium text-slate-800">{name}</p>
                 {location && <p className="text-sm text-slate-500">{location}</p>}
+                {date && <p className="text-sm text-slate-500 italic">{date}</p>}
               </div>
             </div>
           </Card>

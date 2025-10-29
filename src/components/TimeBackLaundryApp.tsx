@@ -218,6 +218,7 @@ const TimeBackLaundryApp: React.FC = () => {
       id: "1",
       name: "Jennifer Blackwood",
       location: "Cave Spring, VA",
+      date: "10/26/2025",
       quote:
         "TimeBack Wash and Fold - what a WONDERFUL concept and even better service. Great communication, excellent customer service and a superior job! I highly recommend!",
       rating: 5,
@@ -226,6 +227,7 @@ const TimeBackLaundryApp: React.FC = () => {
       id: "2",
       name: "Kim Gibson",
       location: "Cave Spring, VA",
+      date: "10/28/2025",
       quote:
         "TimeBack Wash & Fold did an amazing job with our laundry.  They were very professional with a quick turnaround time.  The clothes came back neatly folded and well organized.  It was a huge time saver.  I will be using them on a regular basis and recommend them to anyone who struggles to find time to check laundry off their to-do lists!",
       rating: 5,
