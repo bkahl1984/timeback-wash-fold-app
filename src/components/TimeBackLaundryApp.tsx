@@ -216,10 +216,18 @@ const TimeBackLaundryApp: React.FC = () => {
   const testimonials: Testimonial[] = [
     {
       id: "1",
-      name: "Jennifer Blackwood.",
+      name: "Jennifer Blackwood",
       location: "Cave Spring, VA",
       quote:
         "TimeBack Wash and Fold - what a WONDERFUL concept and even better service. Great communication, excellent customer service and a superior job! I highly recommend!",
+      rating: 5,
+    },
+    {
+      id: "2",
+      name: "Kim Gibson",
+      location: "Cave Spring, VA",
+      quote:
+        "TimeBack Wash & Fold did an amazing job with our laundry.  They were very professional with a quick turnaround time.  The clothes came back neatly folded and well organized.  It was a huge time saver.  I will be using them on a regular basis and recommend them to anyone who struggles to find time to check laundry off their to-do lists!",
       rating: 5,
     },
   ];
@@ -228,7 +236,7 @@ const TimeBackLaundryApp: React.FC = () => {
     <div className="min-h-screen bg-gradient-to-br pt-8 pb-8 lg:p-8">
       <div className="max-w-sm mx-auto md:max-w-4xl lg:max-w-7xl bg-white rounded-2xl shadow-xl overflow-hidden">
         {/* Three Column Layout for Desktop, Two for Tablet */}
-        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-0">
+        <div className="md:grid md:grid-cols-2 lg:grid-cols-3 md:gap-0 tile-background-color">
 
           {/* Column 1: Header & Services */}
           <div className="md:order-1 lg:order-1 md:col-span-1 lg:col-span-1">
@@ -295,22 +303,6 @@ const TimeBackLaundryApp: React.FC = () => {
               </div>
             </div>
 
-            {/* Frequently Asked Questions Section */}
-            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Frequently Asked Questions</h3>
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
-                <Accordion items={items} />
-              </div>
-            </div>
-
-            {/* Testimonial Section */}
-            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
-              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Testimonials</h3>
-              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
-                <Testimonials items={testimonials} />
-              </div>
-            </div>
-
             {/* Contact Information */}
             <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color">
               <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-4 lg:mb-6 text-center md:text-left">Contact Information</h3>
@@ -340,6 +332,22 @@ const TimeBackLaundryApp: React.FC = () => {
                   <MapPin className="w-6 h-6 lg:w-7 lg:h-7 price-text-color" />
                   <span className="md:text-lg lg:text-xl">Serving Cave Spring, VA</span>
                 </div>
+              </div>
+            </div>
+
+            {/* Frequently Asked Questions Section */}
+            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Frequently Asked Questions</h3>
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
+                <Accordion items={items} />
+              </div>
+            </div>
+
+            {/* Testimonial Section */}
+            <div className="p-6 lg:p-8 xl:p-10 border-t border-pricing-color ">
+              <h3 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-6 text-center md:text-left">Testimonials</h3>
+              <div className="grid grid-cols-1 md:grid-cols-1 lg:grid-cols-1 gap-3 lg:gap-4">
+                <Testimonials items={testimonials} />
               </div>
             </div>
           </div>

@@ -29,7 +29,7 @@ const Star: React.FC<{ filled?: boolean; className?: string }> = ({ filled, clas
 );
 
 const Card: React.FC<{ children: React.ReactNode }> = ({ children }) => (
-  <article className="rounded-2xl border border-pricing-color bg-white p-5 shadow-sm">
+  <article className="rounded-2xl border border-pricing-color bg-white p-5 shadow-sm mb-8">
     {children}
   </article>
 );
