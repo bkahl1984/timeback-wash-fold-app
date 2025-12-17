@@ -62,7 +62,7 @@ const TimeBackLaundryApp: React.FC = () => {
       icon: <Shirt className="w-8 h-8 price-text-color" />,
       title: "Wash & Fold",
       description: "Washing, drying, and folding of your everyday clothes",
-      price: "$35 per 13-gallon bag (up to 20 lb included) • +$2.00/lb over included weight",
+      price: "$35 per 13-gallon bag",
     },
     {
       icon: <Truck className="w-8 h-8 price-text-color" />,
