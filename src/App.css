@@ -88,3 +88,15 @@ input[type="date"]::-webkit-datetime-edit {
 .star-text-color {
   color: #F45E39;
 }
+
+/* Hide by default */
+.mobile-only-btn {
+  display: none !important;
+}
+
+/* Show on anything that’s “not a big desktop” */
+@media screen and (max-width: 1024px) {
+  .mobile-only-btn {
+    display: inline-flex !important; /* or block */
+  }
+}

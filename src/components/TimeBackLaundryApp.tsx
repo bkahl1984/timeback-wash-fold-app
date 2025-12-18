@@ -268,6 +268,11 @@ const TimeBackLaundryApp: React.FC = () => {
 
             {/* About Section */}
             <div className="tile-background-color p-6 lg:p-8 xl:p-10 border-t border-pricing-color primary-text-color">
+              <a href="#service-request-form" className="mobile-only-btn w-full primary-submit-button text-white py-4 lg:py-5 rounded-lg font-semibold transition-colors disabled:opacity-50 disabled:cursor-not-allowed flex items-center justify-center text-lg lg:text-xl">
+                Schedule Service
+              </a>
+              <br className="mobile-only-btn" />
+              <br className="mobile-only-btn" />
               <h2 className="text-lg md:text-xl lg:text-2xl font-semibold accent-heading-text-color mb-3 lg:mb-4 text-center md:text-left">About TimeBack</h2>
               <p className="text-sm md:text-base lg:text-lg primary-text-color leading-relaxed">
                 <strong>New in 2025!</strong> TimeBack Wash and Fold is my personal side hustle, created as a way to help busy families while earning a little extra for my own. As a local mom who understands the daily juggle of family 
@@ -370,7 +375,7 @@ const TimeBackLaundryApp: React.FC = () => {
           </div>
 
           {/* Column 3: Contact Form */}
-          <div className="md:order-3 lg:order-3 md:col-span-2 lg:col-span-1 tile-background-color">
+          <div id="service-request-form" className="md:order-3 lg:order-3 md:col-span-2 lg:col-span-1 tile-background-color">
             <div className="p-6 lg:p-8 xl:p-10">
               {!isSubmitted ? (
                 <>
