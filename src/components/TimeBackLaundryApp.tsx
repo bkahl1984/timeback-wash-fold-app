@@ -178,7 +178,7 @@ const TimeBackLaundryApp: React.FC = () => {
       id: "app",
       title: "Do you have an app?",
       content: (
-        <p>Not currently</p>
+        <p>Not currently.</p>
       ),
       defaultOpen: false,
     },
@@ -216,7 +216,7 @@ const TimeBackLaundryApp: React.FC = () => {
       id: "detergent",
       title: "Do we allow people to provide their own detergent?",
       content: (
-        <p>Yes</p>
+        <p>Yes.</p>
       ),
     },
     {
@@ -224,6 +224,13 @@ const TimeBackLaundryApp: React.FC = () => {
       title: "How do you santize your machines?",
       content: (
         <p>We clean and sanitize our wash and fold machines after every client and perform a deep clean weekly. After each load, we run an empty rinse cycle with a hypoallergenic, disinfecting cleaner to remove any residue. Once a week, we fully wipe down and sanitize the washer drum, detergent tray, door seals, and dryer surfaces, ensuring everything stays fresh, hygienic, and safe for the next family’s laundry.</p>
+      ),
+    },
+        {
+      id: "animals",
+      title: "Do you treat animal stains/smells from pee?",
+      content: (
+        <p>No, we do not use our washing machine for those treatments.</p>
       ),
     },
   ];
